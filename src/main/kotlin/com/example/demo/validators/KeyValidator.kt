@@ -13,7 +13,6 @@ class KeyValidator(private val encryptor: Encryptor) {
         val stringToEncrypt = "${request.firstName}-${request.firstName}-${request.software}"
 
         val generatedSecret = generateSecretKey(stringToEncrypt, type)
-        println(generatedSecret)
         if (generatedSecret != request.key) throw ValidationException("Key not valid for parameters $stringToEncrypt")
     }
 

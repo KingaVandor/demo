@@ -19,15 +19,18 @@
 
 ## Testing
 
-### Licence generator endpoint:
+### Licence generator endpoint successful requests:
+- GET http://localhost:8080/licenceapi/getLicenceKey?userFirstName=Bob&userLastName=Smith&softwarePackageName=SOFTWARE_B 
+  auth: xhGpQ7IuIP1fO1CJ8EbOcDRqXjUcDVBvvjKXWRzxwak=
+- GET http://localhost:8080/licenceapi/getLicenceKey?userFirstName=Fred&userLastName=Doe&softwarePackageName=SOFTWARE_B
+  Accept: application/json
+  auth: +DHYHc7rdMXeW1rQ9yiwnNslVLoJveRO/lXKER2Yq+Q=
 
-GET http://localhost:8080/licenceapi/getLicenceKey?userFirstName=Bob&userLastName=Smith&softwarePackageName=SOFTWARE_A&secretKey=xhGpQ7IuIP1fO1CJ8EbOcFJgO44GsIznYg2s2RKjVgs=
 
-Accept: application/json
+### Licence validator endpoint successful request:
+- GET http://localhost:8080/licenceapi/validateLicenceKey?userFirstName=Fred&userLastName=Doe
+  auth: CBG0TZyssuFhKarrm8xv8MRvwwjB7XOdtBvSZcdvCyc=B
 
+- GET http://localhost:8080/licenceapi/validateLicenceKey?userFirstName=Bob&userLastName=Smith
+  auth: Mz2iywrIGlmgAkFyq60a9DIg85zdNphF2IRQp2SDfns=B
 
-### Licence validator endpoint:
-
-GET http://localhost:8080/licenceapi/validateLicenceKey?userFirstName=Bob&userLastName=Smith&licenceKey=Mz2iywrIGlmgAkFyq60a9EfZr12ym3uJo55Mivr5rNE=A
-
-Accept: application/json
