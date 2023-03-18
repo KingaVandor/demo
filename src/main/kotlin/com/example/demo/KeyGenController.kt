@@ -26,7 +26,7 @@ class KeyGenController(
 
     @GetMapping("/licenceapi/getLicenceKey")
     fun getLicenceKey(
-        @RequestHeader("auth") secretKey: String,
+        @RequestHeader("secret") secretKey: String,
         @RequestParam(name = "userFirstName") userFirstName: String,
         @RequestParam(name = "userLastName") userLastName: String,
         @RequestParam(name = "softwarePackageName") softwarePackageName: String,
@@ -49,7 +49,7 @@ class KeyGenController(
 
     @GetMapping("/licenceapi/validateLicenceKey")
     fun validateLicenceKey(
-        @RequestHeader("auth") licenceKey: String,
+        @RequestHeader("secret") licenceKey: String,
         @RequestParam(name = "userFirstName") userFirstName: String,
         @RequestParam(name = "userLastName") userLastName: String,
     ): ResponseEntity<String> {

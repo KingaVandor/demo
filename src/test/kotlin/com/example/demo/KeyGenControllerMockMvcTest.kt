@@ -20,7 +20,7 @@ import org.springframework.test.web.servlet.MvcResult
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 
 @WebMvcTest
-internal class KeyGenControllerIntegrationTest(@Autowired val mockMvc: MockMvc) {
+internal class KeyGenControllerMockMvcTest(@Autowired val mockMvc: MockMvc) {
     @MockkBean
     lateinit var encryptor: Encryptor
     @MockkBean
@@ -71,7 +71,7 @@ internal class KeyGenControllerIntegrationTest(@Autowired val mockMvc: MockMvc) 
     private fun getLicenceRequestResponse(firstName: String, lastName: String, software: String, key: String): MvcResult {
         return mockMvc.perform(
             get("/licenceapi/getLicenceKey")
-                .header("auth", key)
+                .header("secret", key)
                 .param("userFirstName", firstName)
                 .param("userLastName", lastName)
                 .param("softwarePackageName", software))
@@ -81,7 +81,7 @@ internal class KeyGenControllerIntegrationTest(@Autowired val mockMvc: MockMvc) 
     private fun getValidationRequestResponse(firstName: String, lastName: String, key: String): MvcResult {
         return mockMvc.perform(
             get("/licenceapi/validateLicenceKey")
-                .header("auth", key)
+                .header("secret", key)
                 .param("userFirstName", firstName)
                 .param("userLastName", lastName))
             .andReturn()

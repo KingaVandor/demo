@@ -21,16 +21,16 @@
 
 ### Licence generator endpoint successful requests:
 - GET http://localhost:8080/licenceapi/getLicenceKey?userFirstName=Bob&userLastName=Smith&softwarePackageName=SOFTWARE_B 
-  auth: xhGpQ7IuIP1fO1CJ8EbOcDRqXjUcDVBvvjKXWRzxwak=
+  secret: xhGpQ7IuIP1fO1CJ8EbOcDRqXjUcDVBvvjKXWRzxwak=
 - GET http://localhost:8080/licenceapi/getLicenceKey?userFirstName=Fred&userLastName=Doe&softwarePackageName=SOFTWARE_B
   Accept: application/json
-  auth: +DHYHc7rdMXeW1rQ9yiwnNslVLoJveRO/lXKER2Yq+Q=
+  secret: +DHYHc7rdMXeW1rQ9yiwnNslVLoJveRO/lXKER2Yq+Q=
 
 
 ### Licence validator endpoint successful requests:
 - GET http://localhost:8080/licenceapi/validateLicenceKey?userFirstName=Fred&userLastName=Doe
-  auth: CBG0TZyssuFhKarrm8xv8MRvwwjB7XOdtBvSZcdvCyc=B
+  secret: CBG0TZyssuFhKarrm8xv8MRvwwjB7XOdtBvSZcdvCyc=B
 
 - GET http://localhost:8080/licenceapi/validateLicenceKey?userFirstName=Bob&userLastName=Smith
-  auth: Mz2iywrIGlmgAkFyq60a9DIg85zdNphF2IRQp2SDfns=B
+  secret: Mz2iywrIGlmgAkFyq60a9DIg85zdNphF2IRQp2SDfns=B
 
